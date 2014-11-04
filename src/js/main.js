@@ -21,6 +21,8 @@ var templateLoader = {
 				 */
 
 				deferreds.push($.get('templates/' + view + '.html', function (data) {
+					// Underscore compiles the template and returns a function which takes the
+					// data argument to populate the template with.
 					window[view].prototype.template = _.template(data);
 				}, 'html'));
 			} else {
